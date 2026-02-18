@@ -1,85 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>مافیا | بازی گروهی</title>
-    
-    <!-- فونت فارسی وزیرمتن -->
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
-    
-    <!-- تلگرام WebApp SDK -->
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    
-    <!-- لینک به فایل CSS خارجی -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="app">
-        <!-- ===== هدر ===== -->
-        <header class="header">
-            <div class="user-info">
-                <div class="avatar" id="avatar">👤</div>
-                <span class="username" id="username"></span>
-            </div>
-            <div class="coins">
-                <span class="coin-icon">🪙</span>
-                <span id="user-coins">0</span>
-            </div>
-        </header>
-
-        <!-- ===== محتوای اصلی ===== -->
-        <main id="content">
-            <!-- صفحه اصلی -->
-            <div id="home-page" class="page active">
-                <div id="home-content"></div>
-            </div>
-
-            <!-- صفحه بازی -->
-            <div id="game-page" class="page">
-                <div id="game-content"></div>
-            </div>
-
-            <!-- صفحه فروشگاه -->
-            <div id="shop-page" class="page">
-                <div id="shop-content"></div>
-            </div>
-
-            <!-- صفحه پروفایل -->
-            <div id="profile-page" class="page">
-                <div id="profile-content"></div>
-            </div>
-        </main>
-
-        <!-- ===== منوی پایین ===== -->
-        <nav class="bottom-nav">
-            <button class="nav-btn active" onclick="changePage('home')" data-page="home">🏠</button>
-            <button class="nav-btn" onclick="changePage('game')" data-page="game">🎮</button>
-            <button class="nav-btn" onclick="changePage('shop')" data-page="shop">🛒</button>
-            <button class="nav-btn" onclick="changePage('profile')" data-page="profile">👤</button>
-        </nav>
-    </div>
-
-    <!-- ===== مودال خرید ===== -->
-    <div class="modal-overlay" id="purchase-modal">
-        <div class="modal">
-            <button class="modal-close" onclick="closeModal()">✕</button>
-            <h3 style="margin-bottom: 20px;">✅ تایید خرید</h3>
-            <div style="text-align: center; margin-bottom: 20px;">
-                <div style="font-size: 48px; margin-bottom: 10px;">🪙</div>
-                <div style="font-size: 24px; font-weight: 700;" id="modal-amount">۰ سکه</div>
-                <div style="color: var(--text-secondary); margin-top: 8px;" id="modal-price">۰ تومان</div>
-            </div>
-            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 20px;">
-                پس از تایید، فاکتور در پیوی ربات برات ارسال میشه
-            </p>
-            <div style="display: flex; gap: 12px;">
-                <button class="btn btn-secondary" style="flex: 1;" onclick="closeModal()">انصراف</button>
-                <button class="btn btn-primary" style="flex: 1;" onclick="confirmPurchase()">تایید و خرید</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="app.js"></script>
-</body>
-</html>
